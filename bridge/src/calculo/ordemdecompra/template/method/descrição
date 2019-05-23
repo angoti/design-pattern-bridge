@@ -1,0 +1,20 @@
+Um pedido pode ser precificado com dois componentes: modalidade de comercialização e tipo de entrega.
+
+A modalidade pode ser varejo ou atacado, com preços diferentes para cada tipo.
+A entrega pode ser expressa ou normal.
+
+Na primeira abordagem pdemos tentar aplicar o padrão template method onde definimos 
+uma classe abstrata com um método para calcular o preço com dois métodos abstratos (hook method) 
+para calcular os valores individuais de cada componente do preço.
+
+Assim teremos quatros subclasses, combinando os dois componentes:
+1. classe que modela o preço no atacado com entrega expressa
+2. classe que modela o preço no atacado com entrega normal
+3. classe que modela o preço no varejo com entrega normal
+4. classe que modela o preço no varejo com entrega expressa
+
+As regras são:
+1. Preço de atacado é 90% do preço padrão
+2. Preço no varejo é igual ao preço padrão
+3. A entrega normal é de graça
+4. A entrega expressa custa R$ 30,00
